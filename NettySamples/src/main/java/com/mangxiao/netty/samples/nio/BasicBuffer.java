@@ -2,6 +2,9 @@ package com.mangxiao.netty.samples.nio;
 
 import java.nio.IntBuffer;
 
+/**
+ * @description IntBuffer的读写操作
+ */
 public class BasicBuffer {
 
     public static void main(String[] args){
