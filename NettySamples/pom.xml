@@ -10,6 +10,7 @@
     <name>netty-sample</name>
     <packaging>pom</packaging>
     <dependencies>
+        <!--
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
@@ -22,6 +23,7 @@
             <version>1.6.4</version>
             <scope>compile</scope>
         </dependency>
+        -->
         <dependency>
             <groupId>io.netty</groupId>
             <artifactId>netty-all</artifactId>
