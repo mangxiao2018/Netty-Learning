@@ -1,4 +1,4 @@
-package com.mangxiao.netty.samples.nio;
+package com.mangxiao.netty.samples.nio.buffer;
 
 import java.nio.IntBuffer;
 
