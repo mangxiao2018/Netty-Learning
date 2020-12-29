@@ -10,7 +10,7 @@ import java.util.Arrays;
  * @description:Scattering：将数据写入到buffer时，可以采用buffer数组，依次写入  [分散]
  * Gathering: 从buffer读取数据时，可以采用buffer数组，依次读
  * @author:mangxiao2018@126.com
- * @date:2020-12-29
+ * @date:2020-12-29   
  */
 public class ScatteringAndGatheringTestCase {
 
