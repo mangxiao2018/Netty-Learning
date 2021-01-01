@@ -95,7 +95,7 @@ public class GroupChatServer {
         groupChatServer.listen();
     }
 
-}  
+}
 
 class MyHandler {
     public void readData(){
