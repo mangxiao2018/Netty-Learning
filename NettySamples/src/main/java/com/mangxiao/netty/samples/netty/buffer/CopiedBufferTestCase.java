@@ -36,8 +36,8 @@ public class CopiedBufferTestCase {
                 System.out.println((char) byteBuf.getByte(i));
             }
             // 按某个范围读取
-            System.out.println(byteBuf.getCharSequence(0, 4, Charset.forName("utf-8"));
-            System.out.println(byteBuf.getCharSequence(4, 6, Charset.forName("utf-8"));
+            System.out.println(byteBuf.getCharSequence(0, 4, Charset.forName("utf-8")));
+            System.out.println(byteBuf.getCharSequence(4, 6, Charset.forName("utf-8")));
 
         }
     }
