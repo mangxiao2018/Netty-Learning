@@ -17,6 +17,7 @@ public class FileChannelTestCase {
         out();
         in();
         inAndOut();
+        transferFrom();
     }
 
     /**
