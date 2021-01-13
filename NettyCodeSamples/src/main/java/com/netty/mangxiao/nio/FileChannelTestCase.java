@@ -82,4 +82,23 @@ public class FileChannelTestCase {
         out.close();
         in.close();
     }
+
+    /**
+     * 通过transferFrom完成文件的拷贝
+     * @throws Exception
+     */
+    public static void transferFrom() throws Exception {
+        FileInputStream in = new FileInputStream("d:\\a.jpg");
+        FileOutputStream out = new FileOutputStream("d:\\b.jpg");
+
+        FileChannel inChannel = in.getChannel();
+        FileChannel outChannel = out.getChannel();
+
+        outChannel.transferFrom(inChannel, 0, inChannel.size());
+
+        inChannel.close();
+        outChannel.close();
+        in.close();
+        out.close();
+    }
 }
