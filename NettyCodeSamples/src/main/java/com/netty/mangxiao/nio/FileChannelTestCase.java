@@ -16,6 +16,7 @@ public class FileChannelTestCase {
     public static void main(String[] args) throws Exception {
         out();
         in();
+        inAndOut();
     }
 
     /**
@@ -51,6 +52,34 @@ public class FileChannelTestCase {
         channel.read(buffer);
 
         System.out.println(new String(buffer.array()));
+        in.close();
+    }
+
+    /**
+     * 1.TXT->FileInputStream->FileChannel(IN)->ByteBuffer->FileChannel(OUT)->FileOutputStream->2.TXT
+     * @throws Exception
+     */
+    public static void inAndOut() throws Exception {
+        FileInputStream in = new FileInputStream("d:\\1.txt");
+        FileOutputStream out = new FileOutputStream("d:\\2.txt");
+
+        FileChannel inChannel = in.getChannel();
+        FileChannel outChannel = out.getChannel();
+
+        ByteBuffer buffer = ByteBuffer.allocate(2048);
+
+        while (true){
+            buffer.clear();
+            int read = inChannel.read(buffer);
+            System.out.println("read=" + read);
+            if (read == -1){
+                break;
+            }
+            buffer.flip();
+            outChannel.write(buffer);
+        }
+
+        out.close();
         in.close();
     }
 }
