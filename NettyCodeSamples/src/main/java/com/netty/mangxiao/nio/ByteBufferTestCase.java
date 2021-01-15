@@ -24,7 +24,5 @@ public class ByteBufferTestCase {
         System.out.println(buffer.getChar());
         System.out.println(buffer.getShort());
 //        System.out.println(buffer.getLong()); //全报错 BufferUnderflowException
-
-
     }
 }
