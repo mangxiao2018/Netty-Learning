@@ -37,7 +37,9 @@ public class ScatteringAndGatheringTestCase {
                 byteRead += 1;
                 System.out.println("byteRead=" + byteRead);
                 // 使用流打印, 看看当前的这个buffer的position 和 limit
-                Arrays.asList(buffers).stream().map(buffer -> "position=" + buffer.position() +",limit=" +buffer.limit()).forEach(System.out::println);
+                Arrays.asList(buffers).stream().map(buffer -> "position="
+                        + buffer.position()
+                        + ",limit=" +buffer.limit()).forEach(System.out::println);
             }
             // 将所有的buffer进行flip
             Arrays.asList(buffers).forEach(buffer -> buffer.flip());
@@ -51,7 +53,8 @@ public class ScatteringAndGatheringTestCase {
             Arrays.asList(buffers).forEach(buffer -> {
                 buffer.clear();
             });
-            System.out.println("byteRead=" + byteRead + ", byteWrite=" + byteWrite + ", messageLength=" + messageLength);
+            System.out.println("byteRead=" + byteRead + ", byteWrite=" + byteWrite
+                    + ", messageLength=" + messageLength);
         }
     }
 }
