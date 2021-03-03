@@ -9,7 +9,7 @@ import java.nio.channels.SocketChannel;
  * @author:mangxiao2018@126.com
  * @date:2021-1-28
  */
-public class Client {
+public class ClientTestCase {
     public static void main(String[] args) throws Exception{
         //得到一个网络通道
         SocketChannel socketChannel = SocketChannel.open();

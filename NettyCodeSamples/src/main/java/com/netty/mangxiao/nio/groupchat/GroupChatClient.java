@@ -71,7 +71,7 @@ public class GroupChatClient {
 
     public static void main(String[] args) throws Exception{
         //启动客户端
-        GroupChatClient chatClient = new GroupChatClient();
+        final GroupChatClient chatClient = new GroupChatClient();
         //启动一个线程, 每隔3秒，读取从服务器发送数据
         new Thread(){
             public void run(){
