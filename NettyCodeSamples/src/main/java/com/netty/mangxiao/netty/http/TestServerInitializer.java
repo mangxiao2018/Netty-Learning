@@ -1,4 +1,4 @@
-package com.netty.mangxiao.nio.http;
+package com.netty.mangxiao.netty.http;
 
 import io.netty.channel.ChannelInitializer;
 import io.netty.channel.ChannelPipeline;

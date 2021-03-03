@@ -1,4 +1,4 @@
-package com.netty.mangxiao.nio.http;
+package com.netty.mangxiao.netty.http;
 
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.Unpooled;
@@ -19,13 +19,15 @@ import java.net.URI;
 public class TestHttpServerHandler extends SimpleChannelInboundHandler<HttpObject> {
     //channelRead0 读取客户端数据
     protected void channelRead0(ChannelHandlerContext ctx, HttpObject msg) throws Exception {
-        System.out.println("对应的channel=" + ctx.channel() + "pipeline=" + ctx.pipeline() + "通过pipeline获取channel" + ctx.pipeline().channel());
+        System.out.println("对应的channel=" + ctx.channel() + "pipeline=" + ctx.pipeline()
+                + "通过pipeline获取channel" + ctx.pipeline().channel());
 
         System.out.println("当前ctx的handler=" + ctx.channel());
         //判断 msg 是不是 httprequest请求
         if (msg instanceof HttpRequest){
             System.out.println("ctx类型=" + ctx.getClass());
-            System.out.println("pipeline hashcode" + ctx.pipeline().hashCode() + "TestHttpServerHandler hash=" + this.hashCode());
+            System.out.println("pipeline hashcode" + ctx.pipeline().hashCode()
+                    + "TestHttpServerHandler hash=" + this.hashCode());
             System.out.println("msg 类型=" + msg.getClass());
             System.out.println("客户端地址" + ctx.channel().remoteAddress());
             //获取到
@@ -39,7 +41,8 @@ public class TestHttpServerHandler extends SimpleChannelInboundHandler<HttpObjec
             //回复信息给浏览器 [http协议]
             ByteBuf content = Unpooled.copiedBuffer("Hello, 我是服务器", CharsetUtil.UTF_8);
 
-            FullHttpResponse response = new DefaultFullHttpResponse(HttpVersion.HTTP_1_1, HttpResponseStatus.OK, content);
+            FullHttpResponse response = new DefaultFullHttpResponse(HttpVersion.HTTP_1_1,
+                    HttpResponseStatus.OK, content);
             //构造一个http的相应response，即 httpresponse
             response.headers().set(HttpHeaderNames.CONTENT_TYPE,"text/plain");
             response.headers().set(HttpHeaderNames.CONTENT_LENGTH, content.readableBytes());
