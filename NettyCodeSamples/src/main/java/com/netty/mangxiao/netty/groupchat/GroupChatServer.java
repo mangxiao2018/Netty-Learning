@@ -23,7 +23,7 @@ public class GroupChatServer {
         this.port = port;
     }
 
-    public void run(){
+    public void run() throws Exception{
         EventLoopGroup bossGroup = new NioEventLoopGroup(1);
         EventLoopGroup workerGroup = new NioEventLoopGroup();
         try {
@@ -54,7 +54,7 @@ public class GroupChatServer {
         }
     }
 
-    public static void main(String[] args){
+    public static void main(String[] args) throws Exception{
         new GroupChatServer(7000).run();
     }
 }
