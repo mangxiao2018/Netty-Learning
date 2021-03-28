@@ -40,7 +40,8 @@ public class Server {
                     ChannelPipeline pipeline = channel.pipeline();
                     //在pipeline加入ProtoBufDecoder
                     //指定对哪种对象进行解码
-                    pipeline.addLast("decoder", new ProtobufDecoder(StudentPOJO.Student.getDefaultInstance()));
+                    pipeline.addLast("decoder",
+                            new ProtobufDecoder(StudentPOJO.Student.getDefaultInstance()));
                     pipeline.addLast(new ServerHandler());
                 }
             });

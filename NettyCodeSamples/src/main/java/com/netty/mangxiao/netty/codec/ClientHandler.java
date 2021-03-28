@@ -13,7 +13,8 @@ import io.netty.util.CharsetUtil;
 public class ClientHandler extends ChannelInboundHandlerAdapter {
     @Override
     public void channelActive(ChannelHandlerContext ctx) throws Exception {
-        StudentPOJO.Student student = StudentPOJO.Student.newBuilder().setId(4).setName("芒硝 张艳青").build();
+        StudentPOJO.Student student = StudentPOJO.Student
+                .newBuilder().setId(4).setName("芒硝 张艳青").build();
         ctx.writeAndFlush(student);
     }
 
