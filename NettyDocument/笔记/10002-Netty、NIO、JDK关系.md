@@ -5,3 +5,4 @@ Netty底层使用的是TCP/IP通信，JDK原生建立在TCP/IP上，再往上是
 ![10002](images/10002.jpg)
 
 ==所以要想学好Netty，需要把JDK的IO、NIO、网络编程学好==
+
